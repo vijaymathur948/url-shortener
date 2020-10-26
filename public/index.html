@@ -27,7 +27,9 @@
       <div class="list">
         <ol>
           <li v-for="item in list">
-            <a id="shortUrl" v-bind:href="item.slug">{{ item.slug }} </a>
+            <a id="shortUrl" v-bind:href="item.slug" target="_blank"
+              >{{ item.slug }}
+            </a>
             <span id="absoluteUrl"><u>{{item.url}}</u> </span>
             <span v-on:click="deleteUrl(item.slug)" id="delete">Delete</span>
           </li>
