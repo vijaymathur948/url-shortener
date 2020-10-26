@@ -3,10 +3,8 @@ const app = new Vue({
   data: {
     url: "",
     slug: "",
-    flag: "main",
-    mainUrl: "http://localhost:3000",
-    created: null,
-    list: [{ url: "url", slug: "slug" }],
+    mainUrl: "https://short-short-url.herokuapp.com/",
+    list: [],
   },
   async mounted() {
     const response = await fetch("/list", {
@@ -29,7 +27,6 @@ const app = new Vue({
           slug: this.slug,
         }),
       })
-      this.created = await response.json()
       window.location.href = this.mainUrl
     },
     refresh() {

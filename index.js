@@ -10,7 +10,12 @@ const monk = require("monk")
 //  for security purposes
 require("dotenv").config()
 
-const db = monk(process.env.MONGO_URI)
+const mongo_DB_URI =
+  process.env.NODE_ENV === "development"
+    ? process.env.MONGO_DEVELOPMENT_URI
+    : process.env.MONGO_PRODUCTION_URI
+
+const db = monk(mongo_DB_URI)
 const urls = db.get("urls")
 urls.createIndex({ slug: 1 }, { unique: true })
 
