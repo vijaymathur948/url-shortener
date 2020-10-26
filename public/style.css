@@ -10,3 +10,23 @@ header h1 {
   margin: 1rem;
   text-align: center;
 }
+
+#app {
+  width: 60%;
+  margin: 0 auto;
+}
+#absoluteUrl {
+  position: absolute;
+  left: 40%;
+}
+
+#delete {
+  position: absolute;
+  left: 75%;
+  padding: 0 10px;
+}
+#delete:hover {
+  color: white;
+  cursor: pointer;
+  background-color: red;
+}
